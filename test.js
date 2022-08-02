@@ -1,4 +1,4 @@
-const {search,addToArr} = require("./logic") 
+const {search,addToArr,deleteItem} = require("./logic") 
 
 
 const array = [
@@ -74,4 +74,16 @@ describe('Make Test for addToArr function',() => {
     test('Array should push in empty array',() => {
         expect(addToArr([],{id: 1 , title : 'Ahmad'})).toEqual([{id: 1 , title : 'Ahmad' }])
     })
+})
+
+describe('delete function pure', () => {
+  test('Refactor our delete item function so it is pure.', function () {
+    expect(deleteItem([{ id: 1 }, { id: 2 }], { id: 1 })).toEqual([{ id: 2 }])
+  })
+  test('Refactor our delete item function so it is pure.', function () {
+    expect(deleteItem([{ id: 1 }, { id: 2 }], { id: 3 })).toEqual([
+      { id: 1 },
+      { id: 2 },
+    ])
+  })
 })

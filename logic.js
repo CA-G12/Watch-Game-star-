@@ -8,6 +8,13 @@ function addToArr(arr,obj){
 }
 
 
+
+//! delete function
+
+function deleteItem(array, item) {
+  return array.filter((e) => e.id !== item.id)
+}
+
 if (typeof module !== "undefined") {
-    module.exports = { search , addToArr};
+    module.exports = { search , addToArr ,deleteItem};
 }
