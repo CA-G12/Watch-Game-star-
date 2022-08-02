@@ -1,4 +1,4 @@
-const search = require("./logic")
+const {search,addToArr} = require("./logic") 
 
 
 const array = [
@@ -37,7 +37,7 @@ describe('Make Test for search function',() => {
                 } 
             ])
         })
-        test('Array will take should return []',() => {
+        test('Array will take should return [{title : "Ahmad"}]',() => {
             expect(search(array,'ka')).toEqual([])
         })
         test('Array will take should return []',() => {
@@ -48,4 +48,30 @@ describe('Make Test for search function',() => {
         ])
         })
         // test('should first', () => { second }) 
+})
+
+describe('Make Test for addToArr function',() => {
+    test('Array should push {title : {title : "Anass"}}',() => {
+        expect(addToArr(array,{title : "Anass" ,  id : 4 })).toEqual([
+            {
+                id : 1 , 
+                title : 'Saif' , 
+            } ,
+            {
+                id : 2 , 
+                title : 'Sami'  
+            },
+            {
+                id: 3 , 
+                title : 'Ahmad'
+            },
+            {
+                id : 4 ,
+                title : "Anass" 
+            }
+          ])
+    })
+    test('Array should push in empty array',() => {
+        expect(addToArr([],{id: 1 , title : 'Ahmad'})).toEqual([{id: 1 , title : 'Ahmad' }])
+    })
 })
