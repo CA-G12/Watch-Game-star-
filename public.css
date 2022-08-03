@@ -22,7 +22,6 @@
 
 /* header */
 .headerHome{
-    background-color: var(--mainColor);
     border-bottom: 1px solid var(--golden);
   }
   .header-container{
