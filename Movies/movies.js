@@ -1,7 +1,6 @@
 
 const movieUrl = 'https://yts.mx/api/v2/list_movies.json?page=501&limit=50&api_key=7779a67355fa280acccffd8e56db02d1'
 
-const serachInput = document.querySelector('.headerHome input[type="search"]')
 
 fetchingMovie(movieUrl,({data}) => {
     const moviesArr = data.movies
@@ -11,16 +10,11 @@ fetchingMovie(movieUrl,({data}) => {
     })
 })
 
-serachInput.addEventListener('keyup',searchByName)
+serachInput.addEventListener('keyup',(e) => {
+    searchByName(e,'movies')
+})
 
-function searchByName(e){
-    let title = e.target.value ;
-    let serachedArr = search(JSON.parse(localStorage.getItem('movies')),title) 
-    document.querySelector('.cards-container').innerHTML = ''
-    serachedArr.forEach(ele => {
-        document.querySelector('.cards-container').appendChild(createCard(ele))
-    })
-}
+
 
 
 

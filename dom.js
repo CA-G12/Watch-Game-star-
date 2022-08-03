@@ -73,6 +73,13 @@ function createCard(ele) {
   return flipCard
 }
 
-function bb() {
-  console.log(11)
+const serachInput = document.querySelector('.headerHome input[type="search"]')
+
+function searchByName(e ,category){
+    let title = e.target.value ;
+    let serachedArr = search(JSON.parse(localStorage.getItem(category)),title) 
+    document.querySelector('.cards-container').innerHTML = ''
+    serachedArr.forEach(ele => {
+        document.querySelector('.cards-container').appendChild(createCard(ele))
+    })
 }
