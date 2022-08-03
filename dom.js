@@ -123,6 +123,8 @@ setInterval(() => {
   let a = document.querySelectorAll('.cont-slider')
   ids.unshift(ids.pop())
   ids.forEach((e, i) => {
-    a[i].setAttribute('id', e)
+    if (a[i]) {
+      a[i].setAttribute('id', e)
+    }
   })
 }, 2000)
