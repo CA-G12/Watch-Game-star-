@@ -23,3 +23,10 @@
     background-color: var(--golden);
     color: var(--mainColor);
 }
+
+div.header-fav{
+    justify-content: center;
+}
+section.fav-cards{
+    margin-top: 0;
+}
