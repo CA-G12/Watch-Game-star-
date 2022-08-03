@@ -23,6 +23,9 @@ function saveId(icon) {
   localStorage.setItem('lovedAnime', JSON.stringify(lovedAnime))
 }
 
+serachInput.addEventListener('keyup',(e) => {
+  searchByName(e,'animes')
+})
 slider(arrayItem, arrRondom)
 
 createSliderItem(arrRondom)
