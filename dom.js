@@ -74,6 +74,16 @@ function createCard(ele) {
   return flipCard
 }
 
+const serachInput = document.querySelector('.headerHome input[type="search"]')
+
+function searchByName(e ,category){
+    let title = e.target.value ;
+    let serachedArr = search(JSON.parse(localStorage.getItem(category)),title) 
+    document.querySelector('.cards-container').innerHTML = ''
+    serachedArr.forEach(ele => {
+        document.querySelector('.cards-container').appendChild(createCard(ele))
+    })
+  }
 function slider(arr, arrRondom) {
   for (let i = 0; i < 7; i++) {
     arrRondom.push(arr[Math.floor(Math.random() * arr.length - 1)])

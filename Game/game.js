@@ -12,9 +12,7 @@ let arrayItem = JSON.parse(localStorage.getItem('animes'))
 let arrRondom = []
 function saveId(icon) {
   console.log(icon.id)
-  let lovedAnime = localStorage.getItem('lovedAnime')
-    ? JSON.parse(localStorage.getItem('lovedAnime'))
-    : []
+  let lovedAnime = localStorage.getItem('lovedAnime') ? JSON.parse(localStorage.getItem('lovedAnime')) : [] 
   if (!lovedAnime.includes(icon.id)) {
     lovedAnime = addToArr(lovedAnime, icon.id)
     icon.classList.add('loved')
@@ -25,6 +23,9 @@ function saveId(icon) {
   localStorage.setItem('lovedAnime', JSON.stringify(lovedAnime))
 }
 
+serachInput.addEventListener('keyup',(e) => {
+  searchByName(e,'animes')
+})
 slider(arrayItem, arrRondom)
 
 createSliderItem(arrRondom)

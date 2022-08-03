@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Watch a game || Favorite</title>
+        <!-- css links -->
+        <link rel="stylesheet" href="./../public.css">
+        <link rel="stylesheet" href="./../Movies/moives.css">
+        <link rel="stylesheet" href="./favorite.css">
+        <!--  Font awesome-->
+            <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+          />
+    </head>
+<body>
+    <header class="headerHome">
+        <div class="container header-container">
+             <h1 class="logoHome"><a href="./../index.html"><span>W</span>atch <span>G</span>ame</a></h1>
+             <nav class="nav">
+                 <ul class="nav-list">
+                     <li><input type="search" placeholder="search"></li>
+                     <li class="list-item-img"><a href="#"><i class="fa-solid fa-star"></i></a></li>
+                 </ul>
+             </nav>
+        </div>
+     </header>
+     <section class="filter-btn">
+        <button class="btn btn-all btn-active" onclick="changeActive(this)">All</button>
+        <button class="btn btn-movie" onclick="changeActive(this)">Movies</button>
+        <button class="btn btn-anime" onclick="changeActive(this)">Anime</button>
+     </section>
+     <section class="section-cards">
+        <div class="container cards-container">
+
+        </div>
+    </section>
+    <footer>
+        &copy; By Kakashi and Saif 2022
+    </footer>
+    
+
+
+    <script src="./../fetch.js"></script>
+    <script src="./../logic.js"></script>
+    <script src="./../dom.js"></script>
+    <script src="./favorite.js"></script>
+</body>
+</html>
