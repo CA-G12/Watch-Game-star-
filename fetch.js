@@ -11,4 +11,3 @@ fetchingMovie = (url, cb) => {
 
   xhr.send()
 }
-
