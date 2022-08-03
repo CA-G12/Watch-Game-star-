@@ -8,6 +8,8 @@ fetchingMovie(animeUrl, (data) => {
     document.querySelector('.cards-container').appendChild(createCard(ele))
   })
 })
+let arrayItem = JSON.parse(localStorage.getItem('animes'))
+let arrRondom = []
 function saveId(icon) {
   console.log(icon.id)
   let lovedAnime = localStorage.getItem('lovedAnime')
@@ -22,3 +24,9 @@ function saveId(icon) {
   }
   localStorage.setItem('lovedAnime', JSON.stringify(lovedAnime))
 }
+
+slider(arrayItem, arrRondom)
+
+createSliderItem(arrRondom)
+
+console.log(JSON.parse(localStorage.getItem('animes')))
