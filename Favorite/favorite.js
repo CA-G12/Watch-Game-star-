@@ -55,14 +55,26 @@ function saveId(icon){
     let lovedAnime = localStorage.getItem('lovedAnime')? JSON.parse(localStorage.getItem('lovedAnime')) : []
 
     let allItem = lovedAnime.concat(lovedMovies)
-    if(!allItem.includes(icon.id)){
-        allItem = addToArr(allItem,icon.id);
-        icon.classList.add('loved')
-    }else{
-        allItem =  allItem.filter(ele => ele != icon.id)
-        icon.classList.remove(['loved'])
+    // if(!allItem.includes(icon.id)){
+    //     allItem = addToArr(allItem,icon.id);
+    //     icon.classList.add('loved')
+    // }else{
+    //     allItem =  allItem.filter(ele => ele != icon.id)
+    //     icon.classList.remove(['loved'])
+    // }
+    console.log(icon.id)
+    console.log(lovedMovies)
+    if(lovedMovies.includes('6')){
+        lovedMovies = lovedMovies.filter(ele => ele.id != icon.id)
+        localStorage.setItem('lovedMovies',JSON.stringify(lovedMovies))
+        console.log('first')
+    }else if(lovedMovies.includes('' +icon.id)){
+        lovedAnime = lovedAnime.filter(ele => ele.id != icon.id)
+        lovedAnime.setItem('lovedAnime',JSON.stringify(lovedAnime))
+        console.log('second')
     }
-    localStorage.setItem('allItem',JSON.stringify(allItem)) 
+    icon.classList.remove('loved')
+
 
 }
 
