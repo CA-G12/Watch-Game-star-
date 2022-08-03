@@ -1,0 +1,129 @@
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+/* General styles*/
+:root{
+    --mainColor:#242a32 ; 
+    --secondary: gold ;
+    --golden: goldenrod;
+    --white: white;
+}
+a{
+  color : black ;
+  text-decoration: none;   
+}
+ul{
+    list-style-type: none;
+}
+body{
+    background-color: var(--mainColor);
+}
+
+  /* section cards */
+  .section-cards{
+    padding: 15px 0;
+  }
+.cards-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;    
+}
+
+
+/* Flip card */
+  .flip-card {
+    background-color: transparent;
+    width: 260px;
+    height: 380px; 
+    perspective: 1000px;
+    padding: 5px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  .flip-card img{
+    width: 100%;
+    height: 100%;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: rgb(80, 93, 241);
+    color: var(--white);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 7px;
+  }
+  .flip-card-back i{
+    align-self: flex-end;
+    font-size: 1.1rem;
+    color: #bbb;
+    margin: 7px ;
+  }
+  .flip-card-back i.loved{
+    color: var(--golden);
+  }
+  .flip-card-back .card-title{
+    color: var(--golden);
+  }
+  .flip-card-back .card-summary{
+    width: 90%;
+    height: 70px;
+    overflow: auto; 
+    margin: auto;
+    padding: 2px ;
+  }
+
+  .flip-card-back button{
+    width: 80%;
+    margin: auto;
+    border: 1px solid var(--golden);
+    background-color: var(--mainColor);
+  }
+  .flip-card-back button a{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: var(--white);
+    transition: all 0.5s;
+  }
+  .flip-card-back button:hover a , .flip-card-back button:hover i{
+    color: var(--golden);
+  }
+
+
+
+  /* footer */
+  footer{
+    padding: 8px ;
+    text-align: center;
+    color: var(--golden);
+    font-size: 1.2rem;
+  }
