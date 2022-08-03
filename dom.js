@@ -83,6 +83,7 @@ function searchByName(e ,category){
     serachedArr.forEach(ele => {
         document.querySelector('.cards-container').appendChild(createCard(ele))
     })
+  }
 function slider(arr, arrRondom) {
   for (let i = 0; i < 7; i++) {
     arrRondom.push(arr[Math.floor(Math.random() * arr.length - 1)])
