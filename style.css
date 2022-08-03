@@ -1,25 +1,26 @@
 body{
-  background-color: var(--mainColor);
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-evenly; */
-  height: 100vh;
+  background-image: url('./img/animovie_background.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  min-height: 100vh;
 }
 .headerHome{
-  background-image: url(./img/goldStar.png);
   background-size: 80px;
   background-repeat: no-repeat;
   background-position: center 40px ;
   margin-top: 50px;
-  padding: 50px 0 0 0;
+  padding: 50px  0;
 
 }
-h1{
+h1.logoHome{
   color: var(--white);
-  padding: 20px;
   -webkit-text-stroke: 1px var(--golden);
-
+  padding: 0;
+    background: transparent; 
 }
 span{
   color: var(--secondary);
