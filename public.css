@@ -81,6 +81,13 @@
         gap: 10px;
         padding: 10px ;
     }
+    .box{
+display: none;
+margin-top: 0;
+    }
+    .section-cards{
+      margin-top: 0 !important;
+    }
     h1{
      padding: 0 ;
     }
@@ -120,7 +127,6 @@
 
 
 .box{
-  margin-top: 100px;
   margin: 100px 57% 0 40%;
 }
 .section-cards{
