@@ -49,7 +49,8 @@ function createCard(ele) {
 
   let genres = document.createElement('p')
   genres.innerHTML = `Genres : <span>${
-    ele.genres[0].name||  ele.genres[0] }</span>`
+    ele.genres[0].name || ele.genres[0]
+  }</span>`
 
   let btn = document.createElement('button')
   let btnLink = document.createElement('a')
@@ -82,4 +83,47 @@ function searchByName(e ,category){
     serachedArr.forEach(ele => {
         document.querySelector('.cards-container').appendChild(createCard(ele))
     })
+function slider(arr, arrRondom) {
+  for (let i = 0; i < 7; i++) {
+    arrRondom.push(arr[Math.floor(Math.random() * arr.length - 1)])
+  }
+  console.log(arrRondom)
 }
+let ids = [
+  'ext-1',
+  'ext-2',
+  'ext-3',
+  'ext-4',
+  'ext-5',
+  'ext-6',
+  'ext-7',
+  'ext-8',
+]
+function createSliderItem(arr) {
+  let slider = document.querySelector('.slider')
+  slider.textContent = ''
+  arr
+    .filter((e) => e != undefined)
+    .forEach((e, i) => {
+      let imgBox = document.createElement('figure')
+      let sliderImg = document.createElement('img')
+      sliderImg.setAttribute('class', 'slider-img')
+      imgBox.setAttribute('class', 'cont-slider')
+      slider.appendChild(imgBox)
+      imgBox.appendChild(sliderImg)
+      imgBox.setAttribute('id', ids[i])
+
+      sliderImg.src =
+        e.medium_cover_image ||
+        e.images.jpg.large_image_url ||
+        'https://cdn.myanimelist.net/images/anime/6/73245l.jpg'
+    })
+}
+setInterval(() => {
+  let a = document.querySelectorAll('.cont-slider')
+  ids.unshift(ids.pop())
+  ids.forEach((e, i) => {
+    a[i].setAttribute('id', e)
+  })
+  console.log(ids, a[0])
+}, 2000)

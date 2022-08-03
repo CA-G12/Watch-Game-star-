@@ -8,6 +8,8 @@ fetchingMovie(animeUrl, (data) => {
     document.querySelector('.cards-container').appendChild(createCard(ele))
   })
 })
+let arrayItem = JSON.parse(localStorage.getItem('animes'))
+let arrRondom = []
 function saveId(icon) {
   console.log(icon.id)
   let lovedAnime = localStorage.getItem('lovedAnime') ? JSON.parse(localStorage.getItem('lovedAnime')) : [] 
@@ -24,3 +26,8 @@ function saveId(icon) {
 serachInput.addEventListener('keyup',(e) => {
   searchByName(e,'animes')
 })
+slider(arrayItem, arrRondom)
+
+createSliderItem(arrRondom)
+
+console.log(JSON.parse(localStorage.getItem('animes')))
