@@ -1,7 +1,6 @@
 let animeUrl = 'https://api.jikan.moe/v4/anime'
 fetchingMovie(animeUrl, (data) => {
   const animeArr = data.data
-  console.log(animeArr[0].url)
 
   localStorage.setItem('animes', JSON.stringify(animeArr))
   animeArr.forEach((ele) => {
@@ -11,7 +10,6 @@ fetchingMovie(animeUrl, (data) => {
 let arrayItem = JSON.parse(localStorage.getItem('animes'))
 let arrRondom = []
 function saveId(icon) {
-  console.log(icon.id)
   let lovedAnime = localStorage.getItem('lovedAnime')
     ? JSON.parse(localStorage.getItem('lovedAnime'))
     : []
@@ -28,5 +26,3 @@ function saveId(icon) {
 slider(arrayItem, arrRondom)
 
 createSliderItem(arrRondom)
-
-console.log(JSON.parse(localStorage.getItem('animes')))

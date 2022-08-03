@@ -78,7 +78,6 @@ function slider(arr, arrRondom) {
   for (let i = 0; i < 7; i++) {
     arrRondom.push(arr[Math.floor(Math.random() * arr.length - 1)])
   }
-  console.log(arrRondom)
 }
 let ids = [
   'ext-1',
@@ -116,5 +115,4 @@ setInterval(() => {
   ids.forEach((e, i) => {
     a[i].setAttribute('id', e)
   })
-  console.log(ids, a[0])
 }, 2000)
