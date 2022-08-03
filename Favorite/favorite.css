@@ -1,0 +1,25 @@
+:root{
+    --mainColor:#242a32 ; 
+    --secondary: gold ;
+    --golden: goldenrod;
+    --white: white;
+}
+.filter-btn{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    gap: 10px;
+}
+.filter-btn .btn{
+    width: 140px;
+    border-radius: 35px;
+    font-size: 1.1rem;
+    border: 1px solid var(--golden);
+    background-color: var(--mainColor);
+    color: var(--golden);
+    transition: all 0.3s;
+}
+.filter-btn .btn:hover ,.filter-btn .btn-active{
+    background-color: var(--golden);
+    color: var(--mainColor);
+}
