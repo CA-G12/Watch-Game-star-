@@ -18,7 +18,7 @@ fetchingMovie(animeUrl, (data) => {
 })
 
 const movieUrl =
-  'https://yts.mx/api/v2/list_movies.json?page=501&limit=50&api_key=7779a67355fa280acccffd8e56db02d1'
+  'https://yts.mx/api/v2/list_movies.json?page=1&limit=50&api_key=7779a67355fa280acccffd8e56db02d1'
 
 fetchingMovie(movieUrl, ({ data }) => {
   const moviesArr = data.movies
