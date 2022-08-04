@@ -1,13 +1,8 @@
-let animeUrl = 'https://api.jikan.moe/v4/anime'
-fetchingMovie(animeUrl, (data) => {
-  const animeArr = data.data
-
-  localStorage.setItem('animes', JSON.stringify(animeArr))
-  animeArr.forEach((ele) => {
-    document.querySelector('.cards-container').appendChild(createCard(ele))
-  })
-})
 let arrayItem = JSON.parse(localStorage.getItem('animes'))
+arrayItem.forEach((ele) => {
+  document.querySelector('.cards-container').appendChild(createCard(ele))
+})
+
 let arrRondom = []
 function saveId(icon) {
   let lovedAnime = localStorage.getItem('lovedAnime')
@@ -23,8 +18,8 @@ function saveId(icon) {
   localStorage.setItem('lovedAnime', JSON.stringify(lovedAnime))
 }
 
-serachInput.addEventListener('keyup',(e) => {
-  searchByName(e,'animes')
+serachInput.addEventListener('keyup', (e) => {
+  searchByName(e, 'animes')
 })
 slider(arrayItem, arrRondom)
 
