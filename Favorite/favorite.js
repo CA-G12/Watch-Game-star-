@@ -1,6 +1,6 @@
-
+let btnStatus = localStorage.getItem('btnStatus') ? JSON.parse(localStorage.getItem('btnStatus')) : 'All'
 function changeActive(ele){
-
+    btnStatus = ele.textContent.trim() ;
     // Local storage
     let anime = localStorage.getItem('animes') ? JSON.parse(localStorage.getItem('animes')) : [] 
     let movies = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies')) : [] 
@@ -50,19 +50,35 @@ function renderDom(arr){
 }
 
 function saveId(icon){
-    console.log(icon.id)
+    let anime = localStorage.getItem('animes') ? JSON.parse(localStorage.getItem('animes')) : [] 
+    let movies = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies')) : [] 
     let lovedMovies = localStorage.getItem('lovedMovies') ? JSON.parse(localStorage.getItem('lovedMovies')): []
     let lovedAnime = localStorage.getItem('lovedAnime')? JSON.parse(localStorage.getItem('lovedAnime')) : []
 
-    let allItem = lovedAnime.concat(lovedMovies)
-    if(!allItem.includes(icon.id)){
-        allItem = addToArr(allItem,icon.id);
-        icon.classList.add('loved')
+    if(lovedMovies.includes(icon.id)){
+        lovedMovies = lovedMovies.filter(ele => ele != icon.id)
+        localStorage.setItem('lovedMovies',JSON.stringify(lovedMovies))
+        icon.classList.remove('loved')
+        lovedMovies = movies.filter(ele => lovedMovies.includes(ele.id + ''))
+        if(btnStatus == 'All'){
+            lovedAnime = anime.filter(ele => lovedAnime.includes(ele.mal_id + ''))
+            renderDom(lovedAnime.concat(lovedMovies))
+        }else{
+            renderDom(lovedMovies)
+        }
+        
     }else{
-        allItem =  allItem.filter(ele => ele != icon.id)
-        icon.classList.remove(['loved'])
-    }
-    localStorage.setItem('allItem',JSON.stringify(allItem)) 
+        lovedAnime = lovedAnime.filter(ele => ele != icon.id)
+        localStorage.setItem('lovedAnime',JSON.stringify(lovedAnime))
+        icon.classList.remove('loved')
+        lovedAnime = anime.filter(ele => lovedAnime.includes(ele.mal_id + ''))
 
+        if(btnStatus == 'All'){
+            lovedMovies = movies.filter(ele => lovedMovies.includes(ele.id + ''))
+            renderDom(lovedAnime.concat(lovedMovies))
+        }else{
+            renderDom(lovedAnime)
+        }
+    }
 }
 
